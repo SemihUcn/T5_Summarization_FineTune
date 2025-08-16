@@ -1,0 +1,22 @@
+name: llm-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - transformers==4.43.3
+      - accelerate
+      - datasets
+      - bertviz
+      - umap-learn
+      - sentencepiece
+      - urllib3
+      - py7zr
+      - notebook
+      - ipykernel
+
+conda env create -f environment.yml
+conda activate llm-env
+pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 torchaudio==2.5.1+cu121 --index-url https://download.pytorch.org/whl/cu121
